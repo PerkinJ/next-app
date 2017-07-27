@@ -1,0 +1,29 @@
+{
+  "name": "next-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PerkinJ/next-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PerkinJ/next-app/issues"
+  },
+  "homepage": "https://github.com/PerkinJ/next-app#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "next": "^2.4.8",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
