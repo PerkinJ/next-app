@@ -14,7 +14,7 @@ var _Header2 = _interopRequireDefault(_Header);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/perkin/work/practice/next-app/components/Layout.js';
+var _jsxFileName = '/Users/deepglint/work/practice/next-app/components/Layout.js';
 
 
 var layoutStyle = {
