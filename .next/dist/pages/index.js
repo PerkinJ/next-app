@@ -8,9 +8,41 @@ var _regenerator = require('babel-runtime/regenerator');
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
 var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+var _stringify = require('babel-runtime/core-js/json/stringify');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 var _react = require('react');
 
@@ -28,75 +60,159 @@ var _isomorphicUnfetch = require('isomorphic-unfetch');
 
 var _isomorphicUnfetch2 = _interopRequireDefault(_isomorphicUnfetch);
 
+var _HotContainer = require('../components/HotContainer');
+
+var _HotContainer2 = _interopRequireDefault(_HotContainer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/deepglint/work/practice/next-app/pages/index.js?entry';
+var _container,
+    _jsxFileName = '/Users/deepglint/work/practice/next-app/pages/index.js?entry';
 
-
-var Index = function Index(props) {
-  return _react2.default.createElement(_Layout2.default, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    }
-  }, _react2.default.createElement('h1', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    }
-  }, 'Batman TV Shows'), _react2.default.createElement('ul', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    }
-  }, props.shows.map(function (_ref) {
-    var show = _ref.show;
-    return _react2.default.createElement('li', { key: show.id, __source: {
-        fileName: _jsxFileName,
-        lineNumber: 10
-      }
-    }, _react2.default.createElement(_link2.default, { as: '/p/' + show.id, href: '/post?id=' + show.id, __source: {
-        fileName: _jsxFileName,
-        lineNumber: 11
-      }
-    }, _react2.default.createElement('a', {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      }
-    }, show.name)));
-  })));
+var style = {
+  container: (_container = {
+    margin: '0 auto',
+    width: '980px',
+    background: '#fff',
+    display: 'flex'
+  }, (0, _defineProperty3.default)(_container, 'display', '-webkit-flex'), (0, _defineProperty3.default)(_container, 'marginTop', '50'), (0, _defineProperty3.default)(_container, 'border', '1px solid #ccc'), _container),
+  containerLeft: {
+    padding: '20px 20px 40px',
+    width: 730,
+    height: 'auto'
+  },
+  containerRight: {
+    width: 250,
+    height: 400,
+    border: '1px solid #000'
+  },
+  nav: {
+    width: '100%',
+    height: 35,
+    borderBottom: '2px solid rgb(193, 13, 12)'
+  }
 };
 
-Index.getInitialProps = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
-  var res, data;
-  return _regenerator2.default.wrap(function _callee$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          _context.next = 2;
-          return (0, _isomorphicUnfetch2.default)('https://api.tvmaze.com/search/shows?q=batman');
+var Index = function (_Component) {
+  (0, _inherits3.default)(Index, _Component);
 
-        case 2:
-          res = _context.sent;
-          _context.next = 5;
-          return res.json();
+  function Index(props) {
+    (0, _classCallCheck3.default)(this, Index);
 
-        case 5:
-          data = _context.sent;
+    return (0, _possibleConstructorReturn3.default)(this, (Index.__proto__ || (0, _getPrototypeOf2.default)(Index)).call(this, props));
+  }
 
-          console.log('Show data fetched. Count: ' + data.length);
-
-          return _context.abrupt('return', {
-            shows: data
-          });
-
-        case 8:
-        case 'end':
-          return _context.stop();
-      }
+  (0, _createClass3.default)(Index, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (!sessionStorage.getItem('bpl')) sessionStorage.setItem('bpl', (0, _stringify2.default)(this.props.hotMusic));
     }
-  }, _callee, this);
-}));
+  }, {
+    key: 'render',
+    value: function render() {
+      var hotMusic = this.props.hotMusic;
+
+      return _react2.default.createElement(_Layout2.default, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
+        }
+      }, _react2.default.createElement('div', { style: style.container, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72
+        }
+      }, _react2.default.createElement('div', { style: style.containerLeft, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        }
+      }, _react2.default.createElement('div', { style: style.nav, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 74
+        }
+      }), _react2.default.createElement(_HotContainer2.default, {
+        data: hotMusic,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        }
+      })), _react2.default.createElement('div', { style: style.containerRight, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80
+        }
+      })));
+    }
+  }], [{
+    key: 'getInitialProps',
+    value: function () {
+      var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+        var res, recommendData, res1, broadcastData, res2, bannerData, hotMusic;
+        return _regenerator2.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (process.browser) {
+                  _context.next = 24;
+                  break;
+                }
+
+                _context.next = 3;
+                return (0, _isomorphicUnfetch2.default)('http://192.168.14.166:4001/personalized');
+
+              case 3:
+                res = _context.sent;
+                _context.next = 6;
+                return res.json();
+
+              case 6:
+                recommendData = _context.sent;
+                _context.next = 9;
+                return (0, _isomorphicUnfetch2.default)('http://192.168.14.166:4001/program/recommend');
+
+              case 9:
+                res1 = _context.sent;
+                _context.next = 12;
+                return res1.json();
+
+              case 12:
+                broadcastData = _context.sent;
+                _context.next = 15;
+                return (0, _isomorphicUnfetch2.default)('http://192.168.14.166:4001/banner');
+
+              case 15:
+                res2 = _context.sent;
+                _context.next = 18;
+                return res2.json();
+
+              case 18:
+                bannerData = _context.sent;
+                hotMusic = [].concat((0, _toConsumableArray3.default)(recommendData.result.slice(0, 3)), (0, _toConsumableArray3.default)(broadcastData.programs.slice(0, 1)), (0, _toConsumableArray3.default)(recommendData.result.slice(3, 4)), (0, _toConsumableArray3.default)(broadcastData.programs.slice(1, 2)), (0, _toConsumableArray3.default)(recommendData.result.slice(4, 5)), (0, _toConsumableArray3.default)(broadcastData.programs.slice(2, 3)));
+
+                console.log('bannerData', bannerData);
+                return _context.abrupt('return', {
+                  hotMusic: hotMusic,
+                  banners: bannerData.banners
+                });
+
+              case 24:
+                return _context.abrupt('return', { hotMusic: JSON.parse(sessionStorage.getItem('bpl')) });
+
+              case 25:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function getInitialProps() {
+        return _ref.apply(this, arguments);
+      }
+
+      return getInitialProps;
+    }()
+  }]);
+
+  return Index;
+}(_react.Component);
 
 exports.default = Index;

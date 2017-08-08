@@ -1,31 +1,88 @@
+import React,{ Component } from 'react'
 import Layout from '../components/Layout.js'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
+import HotContainer from '../components/HotContainer'
 
-const Index = (props) => (
-  <Layout>
-    <h1>Batman TV Shows</h1>
-    <ul>
-      {props.shows.map(({show}) => (
-        <li key={show.id}>
-          <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
-            <a>{show.name}</a>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </Layout>
-)
-
-Index.getInitialProps = async function() {
-  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
-  const data = await res.json()
-
-  console.log(`Show data fetched. Count: ${data.length}`)
-
-  return {
-    shows: data
+const style = {
+  container:{
+    margin:'0 auto',
+    width:'980px',
+    background:'#fff',
+    display:'flex',
+    display:'-webkit-flex',
+    marginTop:'50',
+    border:'1px solid #ccc'
+  },
+  containerLeft:{
+    padding:'20px 20px 40px',
+    width:730,
+    height:'auto'
+  },
+  containerRight:{
+    width:250,
+    height:400,
+    border:'1px solid #000'
+  },
+  nav:{
+    width:'100%',
+    height:35,
+    borderBottom:'2px solid rgb(193, 13, 12)',
   }
 }
+export default class Index extends Component{
+  constructor(props) {
+    super(props);
+    
+  }
+  static async getInitialProps(){
+    if(!process.browser) {
+      //服务端渲染
 
-export default Index
+      //推荐歌单
+      let res = await fetch('http://192.168.14.166:4001/personalized')
+      let recommendData = await res.json()
+      //电台音乐
+      let res1 = await fetch('http://192.168.14.166:4001/program/recommend')
+      let broadcastData = await res1.json()
+      // 获取banner
+      let res2 = await fetch('http://192.168.14.166:4001/banner')
+      let bannerData = await res2.json()
+
+      let hotMusic = [...recommendData.result.slice(0,3),...broadcastData.programs.slice(0,1),...recommendData.result.slice(3,4),...broadcastData.programs.slice(1,2),...recommendData.result.slice(4,5),...broadcastData.programs.slice(2,3)]
+    
+      console.log('bannerData',bannerData)
+      return {
+        hotMusic: hotMusic,
+        banners: bannerData.banners
+      }
+    }else{
+      // 前端渲染，将结果保存在sessionStorage里面
+      return {hotMusic: JSON.parse(sessionStorage.getItem('bpl'))}
+    }
+  }
+
+  componentDidMount () {
+    if(!sessionStorage.getItem('bpl')) sessionStorage.setItem('bpl', JSON.stringify(this.props.hotMusic))
+  }
+  render(){
+    const { hotMusic } = this.props
+    return(
+      <Layout>
+         <div style={style.container}>
+              <div style={style.containerLeft}>
+                <div style={style.nav}>
+                </div>
+                <HotContainer
+                    data={hotMusic}
+                  />
+              </div>
+              <div style={style.containerRight}>
+              
+              </div>
+            </div>
+
+        </Layout>
+    )
+  }
+}
