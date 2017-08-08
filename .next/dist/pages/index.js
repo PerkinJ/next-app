@@ -67,7 +67,7 @@ var _HotContainer2 = _interopRequireDefault(_HotContainer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _container,
-    _jsxFileName = '/Users/deepglint/work/practice/next-app/pages/index.js?entry';
+    _jsxFileName = '/Users/perkin/work/practice/next-app/pages/index.js?entry';
 
 var style = {
   container: (_container = {
@@ -156,7 +156,7 @@ var Index = function (_Component) {
                 }
 
                 _context.next = 3;
-                return (0, _isomorphicUnfetch2.default)('http://192.168.14.166:4001/personalized');
+                return (0, _isomorphicUnfetch2.default)('http://localhost:4001/personalized');
 
               case 3:
                 res = _context.sent;
@@ -166,7 +166,7 @@ var Index = function (_Component) {
               case 6:
                 recommendData = _context.sent;
                 _context.next = 9;
-                return (0, _isomorphicUnfetch2.default)('http://192.168.14.166:4001/program/recommend');
+                return (0, _isomorphicUnfetch2.default)('http://localhost:4001/program/recommend');
 
               case 9:
                 res1 = _context.sent;
@@ -176,7 +176,7 @@ var Index = function (_Component) {
               case 12:
                 broadcastData = _context.sent;
                 _context.next = 15;
-                return (0, _isomorphicUnfetch2.default)('http://192.168.14.166:4001/banner');
+                return (0, _isomorphicUnfetch2.default)('http://localhost:4001/banner');
 
               case 15:
                 res2 = _context.sent;
