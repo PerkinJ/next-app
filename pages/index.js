@@ -1,17 +1,19 @@
 import React,{ Component } from 'react'
 import Layout from '../components/Layout.js'
+import Slider from '../components/Slider/Slider.js'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 import HotContainer from '../components/HotContainer'
 
 const style = {
   container:{
+
     margin:'0 auto',
+        marginTop:'-25px',
     width:'980px',
     background:'#fff',
     display:'flex',
     display:'-webkit-flex',
-    marginTop:'50',
     border:'1px solid #ccc'
   },
   containerLeft:{
@@ -69,6 +71,28 @@ export default class Index extends Component{
     const { hotMusic } = this.props
     return(
       <Layout>
+         <Slider
+            items={[
+              {
+                src: 'http://p1.music.126.net/SaZMcZoUs44Gn91ZcciV0g==/18767563976515231.jpg',
+                alt: 'images-1',
+              },
+              {
+                src: 'http://p1.music.126.net/MzlpEqwlafRt_NbXHAoxcQ==/18991864346851287.jpg',
+                alt: 'images-2',
+              },
+              {
+                src: 'http://p1.music.126.net/8zqz5IRj_Wwi_TTmoeDigg==/18991864346851292.jpg',
+                alt: 'images-3',
+              },   
+            ]}
+            speed={1.5}       
+            delay={3}         
+            pause={true}      
+            autoplay={true}  
+            dots={true}       
+            arrows={true}    
+          />
          <div style={style.container}>
               <div style={style.containerLeft}>
                 <div style={style.nav}>

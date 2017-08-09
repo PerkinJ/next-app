@@ -13,6 +13,7 @@ const Layout = (props) => (
 		      body{
 		      	margin:0;
 		      	padding:0;
+		      	background:#eee;
 		      }
 		    `}</style>
     <Header />

@@ -34,7 +34,7 @@ function Header (){
 					transition:box-shadow ease-in-out 1s;
 		      }
 		    `}</style>
-			<Link href='/'><li style={style.li}>发现音乐</li></Link>
+			<Link prefetch href='/'><li style={style.li}>发现音乐</li></Link>
 	        <Link href='/about'><li style={style.li}>我的音乐</li></Link>
 		</ul>
     </nav>

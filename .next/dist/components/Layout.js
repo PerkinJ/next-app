@@ -31,18 +31,18 @@ var layoutStyle = {
 };
 
 var Layout = function Layout(props) {
-  return _react2.default.createElement('div', { style: layoutStyle, 'data-jsx': 2488944726,
+  return _react2.default.createElement('div', { style: layoutStyle, 'data-jsx': 2658369436,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     }
   }, _react2.default.createElement(_style2.default, {
-    styleId: 2488944726,
-    css: 'body{margin:0;padding:0}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvTGF5b3V0LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVdxQixBQUdrQixTQUFtQixVQUFTIiwiZmlsZSI6ImNvbXBvbmVudHMvTGF5b3V0LmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9kZWVwZ2xpbnQvd29yay9wcmFjdGljZS9uZXh0LWFwcCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCx7Q29tcG9uZW50fSBmcm9tICdyZWFjdCdcbmltcG9ydCBQcm9wVHlwZXMgZnJvbSAncHJvcC10eXBlcydcbmltcG9ydCBIZWFkZXIgZnJvbSAnLi9IZWFkZXInXG5cbmNvbnN0IGxheW91dFN0eWxlID0ge1xuICBtYXJnaW46IDAsXG4gIHBhZGRpbmc6IDBcbn1cblxuY29uc3QgTGF5b3V0ID0gKHByb3BzKSA9PiAoXG4gIDxkaXYgc3R5bGU9e2xheW91dFN0eWxlfT5cbiAgPHN0eWxlIGpzeCBnbG9iYWw+e2Bcblx0XHQgICAgICBib2R5e1xuXHRcdCAgICAgIFx0bWFyZ2luOjA7XG5cdFx0ICAgICAgXHRwYWRkaW5nOjA7XG5cdFx0ICAgICAgfVxuXHRcdCAgICBgfTwvc3R5bGU+XG4gICAgPEhlYWRlciAvPlxuICAgIHtwcm9wcy5jaGlsZHJlbn1cbiAgPC9kaXY+XG4pXG5MYXlvdXQuUHJvcFR5cGVzID0ge1xuXHRwcm9wczpQcm9wVHlwZXMub2JqZWN0XG59XG5leHBvcnQgZGVmYXVsdCBMYXlvdXQiXX0= */\n/*@ sourceURL=components/Layout.js */'
+    styleId: 2658369436,
+    css: 'body{margin:0;padding:0;background:#eee}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvTGF5b3V0LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVdxQixBQUdrQixTQUFtQixVQUF5QixnQkFBUyIsImZpbGUiOiJjb21wb25lbnRzL0xheW91dC5qcyIsInNvdXJjZVJvb3QiOiIvVXNlcnMvZGVlcGdsaW50L3dvcmsvcHJhY3RpY2UvbmV4dC1hcHAiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3Qse0NvbXBvbmVudH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnXG5pbXBvcnQgSGVhZGVyIGZyb20gJy4vSGVhZGVyJ1xuXG5jb25zdCBsYXlvdXRTdHlsZSA9IHtcbiAgbWFyZ2luOiAwLFxuICBwYWRkaW5nOiAwXG59XG5cbmNvbnN0IExheW91dCA9IChwcm9wcykgPT4gKFxuICA8ZGl2IHN0eWxlPXtsYXlvdXRTdHlsZX0+XG4gIDxzdHlsZSBqc3ggZ2xvYmFsPntgXG5cdFx0ICAgICAgYm9keXtcblx0XHQgICAgICBcdG1hcmdpbjowO1xuXHRcdCAgICAgIFx0cGFkZGluZzowO1xuXHRcdCAgICAgIFx0YmFja2dyb3VuZDojZWVlO1xuXHRcdCAgICAgIH1cblx0XHQgICAgYH08L3N0eWxlPlxuICAgIDxIZWFkZXIgLz5cbiAgICB7cHJvcHMuY2hpbGRyZW59XG4gIDwvZGl2PlxuKVxuTGF5b3V0LlByb3BUeXBlcyA9IHtcblx0cHJvcHM6UHJvcFR5cGVzLm9iamVjdFxufVxuZXhwb3J0IGRlZmF1bHQgTGF5b3V0Il19 */\n/*@ sourceURL=components/Layout.js */'
   }), _react2.default.createElement(_Header2.default, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     }
   }), props.children);
 };

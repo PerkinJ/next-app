@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/PerkinJ/next-app#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "express": "^4.15.3",
     "isomorphic-unfetch": "^2.0.0",
     "next": "^2.4.8",
