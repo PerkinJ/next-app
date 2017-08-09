@@ -42,13 +42,13 @@ export default class Index extends Component{
       //服务端渲染
 
       //推荐歌单
-      let res = await fetch('http://192.168.14.166:4001/personalized')
+      let res = await fetch('http://localhost:4001/personalized')
       let recommendData = await res.json()
       //电台音乐
-      let res1 = await fetch('http://192.168.14.166:4001/program/recommend')
+      let res1 = await fetch('http://localhost:4001/program/recommend')
       let broadcastData = await res1.json()
       // 获取banner
-      let res2 = await fetch('http://192.168.14.166:4001/banner')
+      let res2 = await fetch('http://localhost:4001/banner')
       let bannerData = await res2.json()
 
       let hotMusic = [...recommendData.result.slice(0,3),...broadcastData.programs.slice(0,1),...recommendData.result.slice(3,4),...broadcastData.programs.slice(1,2),...recommendData.result.slice(4,5),...broadcastData.programs.slice(2,3)]
