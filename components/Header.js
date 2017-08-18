@@ -5,20 +5,22 @@ const style={
 		width:'100%',
 		background:'#212121',
 		height:'4.4rem',
-		boxShadow: '0px 2px 5px #333'
+		// boxShadow: '0px 2px 5px #333'
 	},
 	navContainer:{
-		color:'#ccc',
+		color:'#666',
 		margin:'0 auto',
-		width:'60rem',
-		height:'100%'
+		width:'980px',
+		height:'100%',
+		fontSize:'14'
 	},
 	li:{
+		margin:'0px',
 		color:'#fff',
 		float:'left',
 		textAlign: 'center',
-		width:'6rem',
-		padding:'0 1rem',
+		width:'100px',
+		padding:'0px',
 		listStyle:'none',
 		cursor:'pointer',
 		lineHeight: '4.4rem',

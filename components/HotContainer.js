@@ -31,7 +31,7 @@ const style={
 		left:0,
 		width:140,
 		height:140,
-		background:'url(https://s2.music.126.net/style/web2/img/coverall.png?6bcde05a4e13400e53746eadafd08ef2) no-repeat'
+		background:'url(http://s2.music.126.net/style/web2/img/coverall.png?6bcde05a4e13400e53746eadafd08ef2) no-repeat'
 	},
 	pic:{
 		width:140,
@@ -68,7 +68,7 @@ const HotContainer = ({data}) =>(
 	      .radio{
 	      	padding-top:-3px;
 	      	display:inline-block;
-      		background:url('https://s2.music.126.net/style/web2/img/icon.png?8880f3d6c4796d498ce99dd2a0d2191a') no-repeat 0 9999px;
+      		background:url('http://s2.music.126.net/style/web2/img/icon.png?8880f3d6c4796d498ce99dd2a0d2191a') no-repeat 0 9999px;
       		background-position: -31px -658px;
       		width:35px;
       		height:15px;

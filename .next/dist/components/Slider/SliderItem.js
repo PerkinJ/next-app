@@ -51,21 +51,23 @@ var SliderItem = function (_Component) {
 		value: function render() {
 			var _props = this.props,
 			    count = _props.count,
-			    item = _props.item;
+			    item = _props.item,
+			    idx = _props.idx,
+			    nowLocal = _props.nowLocal;
+			// let width = 100 / count + '%'
 
-			var width = 100 / count + '%';
-			return _react2.default.createElement('li', { className: 'slider-item', style: { width: width }, 'data-jsx': 95773737,
+			return _react2.default.createElement('li', { className: 'slider-item', style: { display: nowLocal === idx ? 'block' : 'none' }, 'data-jsx': 2711072281,
 				__source: {
 					fileName: _jsxFileName,
-					lineNumber: 11
+					lineNumber: 12
 				}
 			}, _react2.default.createElement(_style2.default, {
-				styleId: 95773737,
-				css: '.slider-item[data-jsx="95773737"]{display:inline-block;height:336px}img[data-jsx="95773737"]{margin:0 auto;display:block;height:336px;width:730px}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvU2xpZGVyL1NsaWRlckl0ZW0uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBV2dCLEFBRytCLEFBRVQsY0FBd0IsUUFGUSxPQUVlLE9BRDdELE9BQ21GLGFBQU0iLCJmaWxlIjoiY29tcG9uZW50cy9TbGlkZXIvU2xpZGVySXRlbS5qcyIsInNvdXJjZVJvb3QiOiIvVXNlcnMvZGVlcGdsaW50L3dvcmsvcHJhY3RpY2UvbmV4dC1hcHAiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHtDb21wb25lbnR9IGZyb20gJ3JlYWN0J1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgU2xpZGVySXRlbSBleHRlbmRzIENvbXBvbmVudHtcblx0Y29uc3RydWN0b3IocHJvcHMpIHtcblx0XHRzdXBlcihwcm9wcylcblx0XHRcblx0fVxuXHRyZW5kZXIoKXtcblx0XHRjb25zdCB7IGNvdW50LCBpdGVtIH0gPSB0aGlzLnByb3BzXG5cdFx0bGV0IHdpZHRoID0gMTAwIC8gY291bnQgKyAnJSdcblx0XHRyZXR1cm4gKFxuXHRcdFx0PGxpIGNsYXNzTmFtZT1cInNsaWRlci1pdGVtXCIgc3R5bGU9e3t3aWR0aDogd2lkdGh9fT5cblx0XHRcdFx0PHN0eWxlIGpzeD57YFxuXHRcdFx0XHRcdC5zbGlkZXItaXRlbSB7XG5cdFx0XHRcdFx0ICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcblx0XHRcdFx0XHQgICAgaGVpZ2h0OiAzMzZweDsgICAgXG4gIFx0XHRcdFx0XHR9XG4gIFx0XHRcdFx0XHRpbWcge1xuICBcdFx0XHRcdFx0XHRtYXJnaW46MCBhdXRvO1xuXHRcdFx0XHRcdCAgICBkaXNwbGF5OiBibG9jaztcblx0XHRcdFx0XHQgICAgaGVpZ2h0OiAzMzZweDtcblx0XHRcdFx0XHQgICAgd2lkdGg6IDczMHB4O1xuXHRcdFx0XHRcdH1cblx0XHRcdFx0YH08L3N0eWxlPlxuXHRcdCAgICAgICAgPGltZyBzcmM9e2l0ZW0uc3JjfSBhbHQ9e2l0ZW0uYWx0fSAvPlxuXHRcdCAgICA8L2xpPlxuXHRcdClcblx0fVxufSJdfQ== */\n/*@ sourceURL=components/Slider/SliderItem.js */'
-			}), _react2.default.createElement('img', { src: item.src, alt: item.alt, 'data-jsx': 95773737,
+				styleId: 2711072281,
+				css: '.slider-item[data-jsx="2711072281"]{padding:0px;margin:0px;height:336px}img[data-jsx="2711072281"]{display:block;height:336px;width:730px}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvU2xpZGVyL1NsaWRlckl0ZW0uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBWWdCLEFBR2tCLEFBQ00sWUFEVyxHQUNZLFFBRFcsTUFDVyxRQURILEtBQ1MiLCJmaWxlIjoiY29tcG9uZW50cy9TbGlkZXIvU2xpZGVySXRlbS5qcyIsInNvdXJjZVJvb3QiOiIvVXNlcnMvZGVlcGdsaW50L3dvcmsvcHJhY3RpY2UvbmV4dC1hcHAiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHtDb21wb25lbnR9IGZyb20gJ3JlYWN0J1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBTbGlkZXJJdGVtIGV4dGVuZHMgQ29tcG9uZW50e1xuXHRjb25zdHJ1Y3Rvcihwcm9wcykge1xuXHRcdHN1cGVyKHByb3BzKVxuXHRcdFxuXHR9XG5cdHJlbmRlcigpe1xuXHRcdGNvbnN0IHsgY291bnQsIGl0ZW0sIGlkeCwgbm93TG9jYWwgfSA9IHRoaXMucHJvcHNcblx0XHQvLyBsZXQgd2lkdGggPSAxMDAgLyBjb3VudCArICclJ1xuXHRcdHJldHVybiAoXG5cdFx0XHQ8bGkgY2xhc3NOYW1lPVwic2xpZGVyLWl0ZW1cIiAgc3R5bGU9e3tkaXNwbGF5Om5vd0xvY2FsID09PSBpZHg/J2Jsb2NrJzonbm9uZSd9fT5cblx0XHRcdFx0PHN0eWxlIGpzeD57YFxuXHRcdFx0XHRcdC5zbGlkZXItaXRlbSB7XG5cdFx0XHRcdFx0XHRwYWRkaW5nOjBweDtcblx0XHRcdFx0XHRcdG1hcmdpbjowcHg7XG5cdFx0XHRcdFx0ICAgIGhlaWdodDogMzM2cHg7XG4gIFx0XHRcdFx0XHR9XG4gIFx0XHRcdFx0XHRpbWcge1xuXHRcdFx0XHRcdCAgICBkaXNwbGF5OiBibG9jaztcblx0XHRcdFx0XHQgICAgaGVpZ2h0OiAzMzZweDtcblx0XHRcdFx0XHQgICAgd2lkdGg6IDczMHB4O1xuXHRcdFx0XHRcdH1cblx0XHRcdFx0YH08L3N0eWxlPlxuXHRcdCAgICAgICAgPGltZyBzcmM9e2l0ZW0ucGljfSBhbHQ9e2l0ZW0udGFyZ2V0SWR9IC8+XG5cdFx0ICAgIDwvbGk+XG5cdFx0KVxuXHR9XG59Il19 */\n/*@ sourceURL=components/Slider/SliderItem.js */'
+			}), _react2.default.createElement('img', { src: item.pic, alt: item.targetId, 'data-jsx': 2711072281,
 				__source: {
 					fileName: _jsxFileName,
-					lineNumber: 24
+					lineNumber: 25
 				}
 			}));
 		}

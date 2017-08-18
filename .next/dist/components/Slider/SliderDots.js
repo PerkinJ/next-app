@@ -75,7 +75,7 @@ var SliderDots = function (_Component) {
           fileName: _jsxFileName,
           lineNumber: 24
         }
-      }, '\n          .slider-dots-wrap {\n            z-index: 99;\n            text-align: center;\n            width: 100%;\n            position: absolute;\n            bottom: 20px;\n          }\n        .slider-dot {\n          display: inline-block;\n          width: 6px;\n          height: 6px;\n          border: 3px solid #ccc;\n          margin: 6px;\n          cursor: pointer;\n          border-radius: 20px;\n          \n        }\n        .slider-dot:hover {\n            border: 3px solid #868686;\n          }\n        .slider-dot.slider-dot-selected {\n            background: #ccc;\n          }\n        '), dotNodes);
+      }, '\n          .slider-dots-wrap {\n            z-index: 99;\n            text-align: center;\n            width: 980px;\n            position: absolute;\n            bottom: 10px;\n          }\n        .slider-dot {\n          display: inline-block;\n          width: 6px;\n          height: 6px;\n          margin: 0px 7px;\n          cursor: pointer;\n          border-radius: 3px;\n          background: #eee;\n        }\n        .slider-dot:hover {\n            background: rgb(193, 13, 12);\n          }\n        .slider-dot.slider-dot-selected {\n            background: rgb(193, 13, 12);\n          }\n        '), dotNodes);
     }
   }]);
 

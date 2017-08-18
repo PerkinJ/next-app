@@ -25,25 +25,24 @@ export default class SliderDots extends Component {
           .slider-dots-wrap {
             z-index: 99;
             text-align: center;
-            width: 100%;
+            width: 980px;
             position: absolute;
-            bottom: 20px;
+            bottom: 10px;
           }
         .slider-dot {
           display: inline-block;
           width: 6px;
           height: 6px;
-          border: 3px solid #ccc;
-          margin: 6px;
+          margin: 0px 7px;
           cursor: pointer;
-          border-radius: 20px;
-          
+          border-radius: 3px;
+          background: #eee;
         }
         .slider-dot:hover {
-            border: 3px solid #868686;
+            background: rgb(193, 13, 12);
           }
         .slider-dot.slider-dot-selected {
-            background: #ccc;
+            background: rgb(193, 13, 12);
           }
         `}</style>
         {dotNodes}

@@ -77,7 +77,6 @@ var style = {
   container: (_container = {
 
     margin: '0 auto',
-    marginTop: '-25px',
     width: '980px',
     background: '#fff',
     display: 'flex'
@@ -116,7 +115,9 @@ var Index = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var hotMusic = this.props.hotMusic;
+      var _props = this.props,
+          hotMusic = _props.hotMusic,
+          banners = _props.banners;
 
       return _react2.default.createElement(_Layout2.default, {
         __source: {
@@ -124,17 +125,8 @@ var Index = function (_Component) {
           lineNumber: 73
         }
       }, _react2.default.createElement(_Slider2.default, {
-        items: [{
-          src: 'http://p1.music.126.net/SaZMcZoUs44Gn91ZcciV0g==/18767563976515231.jpg',
-          alt: 'images-1'
-        }, {
-          src: 'http://p1.music.126.net/MzlpEqwlafRt_NbXHAoxcQ==/18991864346851287.jpg',
-          alt: 'images-2'
-        }, {
-          src: 'http://p1.music.126.net/8zqz5IRj_Wwi_TTmoeDigg==/18991864346851292.jpg',
-          alt: 'images-3'
-        }],
-        speed: 1.5,
+        items: banners,
+        speed: 0.5,
         delay: 3,
         pause: true,
         autoplay: true,
@@ -146,25 +138,25 @@ var Index = function (_Component) {
         }
       }), _react2.default.createElement('div', { style: style.container, __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 83
         }
       }, _react2.default.createElement('div', { style: style.containerLeft, __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 84
         }
       }, _react2.default.createElement('div', { style: style.nav, __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 85
         }
       }), _react2.default.createElement(_HotContainer2.default, {
         data: hotMusic,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 87
         }
       })), _react2.default.createElement('div', { style: style.containerRight, __source: {
           fileName: _jsxFileName,
-          lineNumber: 104
+          lineNumber: 91
         }
       })));
     }
@@ -215,6 +207,7 @@ var Index = function (_Component) {
                 hotMusic = [].concat((0, _toConsumableArray3.default)(recommendData.result.slice(0, 3)), (0, _toConsumableArray3.default)(broadcastData.programs.slice(0, 1)), (0, _toConsumableArray3.default)(recommendData.result.slice(3, 4)), (0, _toConsumableArray3.default)(broadcastData.programs.slice(1, 2)), (0, _toConsumableArray3.default)(recommendData.result.slice(4, 5)), (0, _toConsumableArray3.default)(broadcastData.programs.slice(2, 3)));
 
                 console.log('bannerData', bannerData);
+
                 return _context.abrupt('return', {
                   hotMusic: hotMusic,
                   banners: bannerData.banners

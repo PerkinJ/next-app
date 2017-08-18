@@ -18,7 +18,7 @@ export default class SliderArrows extends Component {
             top: 50%;
             margin-top: -50px;
             z-index: 100;
-            padding: 20px;
+            padding: 20px 10px;
             cursor: pointer;
             font-weight: bold;
           }
@@ -26,10 +26,10 @@ export default class SliderArrows extends Component {
             background: rgba(0,0,0,.2);
           }
           .slider-arrow-right {
-            right: 0;
+            right: 5%;
           }
           .slider-arrow-left {
-            left: 0;
+            left: 5%;
           }
         
         `}</style>
