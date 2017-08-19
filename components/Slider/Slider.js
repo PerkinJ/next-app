@@ -8,10 +8,11 @@ export default class Slider extends Component {
     super(props);
     this.state = {
       nowLocal: 0,
+      backgroundColor:'rgba(0,0,0,0.9)'
     };
   }
   // 向前向后多少
-  turn(n) {
+  turn= (n) => {
     var _n = this.state.nowLocal + n;
     if(_n < 0) {
       _n = _n + this.props.items.length;
@@ -19,10 +20,14 @@ export default class Slider extends Component {
     if(_n >= this.props.items.length) {
       _n = _n - this.props.items.length;
     }
-    this.setState({nowLocal: _n});
+    this.setState({
+      nowLocal: _n,
+      backgroundColor:this.getImageColor(this.props.items[_n].titleColor)
+    })
+    console.log(this.getImageColor(this.props.items[_n].titleColor))
   }
   // 开始自动轮播
-  goPlay() {
+  goPlay = () => {
     if(this.props.autoplay) {
       this.autoPlayFlag = setInterval(() => {
         this.turn(1);
@@ -30,11 +35,19 @@ export default class Slider extends Component {
     }
   }
   // 暂停自动轮播
-  pausePlay() {
+  pausePlay = () =>{
     clearInterval(this.autoPlayFlag);
   }
+  getImageColor = (color) =>{
+    const colorRgb = 
+        new Map([
+                ['red','rgba(183,28,28,0.8)'],
+                ['blue','rgba(2,119,189,0.8)'],
+    ]).get(color)
+    return colorRgb  
+  }
   componentDidMount() {
-    this.goPlay();
+    this.goPlay()
   }
   render() {
     let count = this.props.items.length;
@@ -45,6 +58,7 @@ export default class Slider extends Component {
     let dotsNode = <SliderDots turn={this.turn.bind(this)} count={count} nowLocal={this.state.nowLocal} />;
     return (
       <div
+        style={{backgroundColor:this.state.backgroundColor}}
         className="slider"
         onMouseOver={this.props.pause?this.pausePlay.bind(this):null} onMouseOut={this.props.pause?this.goPlay.bind(this):null}>
           <style jsx>{`
@@ -54,7 +68,7 @@ export default class Slider extends Component {
               width: 100%;
               position: relative;
               margin:0 auto;
-              background:pink;
+              transition:background-color 2s;
             }
             ul {
               display:flex;
@@ -65,7 +79,6 @@ export default class Slider extends Component {
               padding:0px;
               height: 336px;
               width:980px;
-              transition: display 1s;
             }
             .box{
               position:relative;

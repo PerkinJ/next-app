@@ -4,6 +4,7 @@ export default class SliderDots extends Component {
     super(props);
   }
   handleDotClick(i) {
+    console.log('i',i)
     var option = i - this.props.nowLocal;
     this.props.turn(option);
   }

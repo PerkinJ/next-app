@@ -13,7 +13,7 @@ export default class SliderArrows extends Component {
           .slider-arrow {
             display: inline-block;
             color: #fff;
-            font-size: 50px;
+            font-size: 40px;
             position: absolute;
             top: 50%;
             margin-top: -50px;
@@ -21,6 +21,12 @@ export default class SliderArrows extends Component {
             padding: 20px 10px;
             cursor: pointer;
             font-weight: bold;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
           }
           .slider-arrow:hover {
             background: rgba(0,0,0,.2);

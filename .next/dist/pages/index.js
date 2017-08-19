@@ -71,7 +71,7 @@ var _HotContainer2 = _interopRequireDefault(_HotContainer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _container,
-    _jsxFileName = '/Users/deepglint/work/practice/next-app/pages/index.js?entry';
+    _jsxFileName = '/Users/perkin/work/practice/next-app/pages/index.js?entry';
 
 var style = {
   container: (_container = {

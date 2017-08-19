@@ -30,7 +30,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/deepglint/work/practice/next-app/components/Slider/SliderDots.js';
+var _jsxFileName = '/Users/perkin/work/practice/next-app/components/Slider/SliderDots.js';
 
 
 var SliderDots = function (_Component) {
@@ -45,6 +45,7 @@ var SliderDots = function (_Component) {
   (0, _createClass3.default)(SliderDots, [{
     key: 'handleDotClick',
     value: function handleDotClick(i) {
+      console.log('i', i);
       var option = i - this.props.nowLocal;
       this.props.turn(option);
     }
@@ -62,18 +63,18 @@ var SliderDots = function (_Component) {
           className: "slider-dot" + (i === this.props.nowLocal ? " slider-dot-selected" : ""),
           onClick: this.handleDotClick.bind(this, i), __source: {
             fileName: _jsxFileName,
-            lineNumber: 15
+            lineNumber: 16
           }
         });
       }
       return _react2.default.createElement('div', { className: 'slider-dots-wrap', __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 24
         }
       }, _react2.default.createElement('style', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 25
         }
       }, '\n          .slider-dots-wrap {\n            z-index: 99;\n            text-align: center;\n            width: 980px;\n            position: absolute;\n            bottom: 10px;\n          }\n        .slider-dot {\n          display: inline-block;\n          width: 6px;\n          height: 6px;\n          margin: 0px 7px;\n          cursor: pointer;\n          border-radius: 3px;\n          background: #eee;\n        }\n        .slider-dot:hover {\n            background: rgb(193, 13, 12);\n          }\n        .slider-dot.slider-dot-selected {\n            background: rgb(193, 13, 12);\n          }\n        '), dotNodes);
     }
