@@ -68,14 +68,19 @@ var _HotContainer = require('../components/HotContainer');
 
 var _HotContainer2 = _interopRequireDefault(_HotContainer);
 
+var _HotSingers = require('../components/HotSingers');
+
+var _HotSingers2 = _interopRequireDefault(_HotSingers);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _container,
     _jsxFileName = '/Users/perkin/work/practice/next-app/pages/index.js?entry';
 
+var URL = 'http://localhost:4001';
+
 var style = {
   container: (_container = {
-
     margin: '0 auto',
     width: '980px',
     background: '#fff',
@@ -88,8 +93,7 @@ var style = {
   },
   containerRight: {
     width: 250,
-    height: 400,
-    border: '1px solid #000'
+    height: 'auto'
   },
   nav: {
     width: '100%',
@@ -110,7 +114,8 @@ var Index = function (_Component) {
   (0, _createClass3.default)(Index, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      if (!sessionStorage.getItem('bpl')) sessionStorage.setItem('bpl', (0, _stringify2.default)(this.props.hotMusic));
+      if (!sessionStorage.getItem('hotMusic')) sessionStorage.setItem('hotMusic', (0, _stringify2.default)(this.props.hotMusic));
+      if (!sessionStorage.getItem('banners')) sessionStorage.setItem('banners', (0, _stringify2.default)(this.props.banners));
     }
   }, {
     key: 'render',
@@ -122,7 +127,7 @@ var Index = function (_Component) {
       return _react2.default.createElement(_Layout2.default, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 80
         }
       }, _react2.default.createElement(_Slider2.default, {
         items: banners,
@@ -134,48 +139,53 @@ var Index = function (_Component) {
         arrows: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 81
         }
       }), _react2.default.createElement('div', { style: style.container, __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 90
         }
       }, _react2.default.createElement('div', { style: style.containerLeft, __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 91
         }
       }, _react2.default.createElement('div', { style: style.nav, __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 92
         }
       }), _react2.default.createElement(_HotContainer2.default, {
         data: hotMusic,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 94
         }
       })), _react2.default.createElement('div', { style: style.containerRight, __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 98
         }
-      })));
+      }, _react2.default.createElement(_HotSingers2.default, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        }
+      }))));
     }
   }], [{
     key: 'getInitialProps',
     value: function () {
       var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
-        var res, recommendData, res1, broadcastData, res2, bannerData, hotMusic;
+        var res, recommendData, res1, broadcastData, res2, bannerData, hotSingersRes, hotSingersData, hotMusic;
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 if (process.browser) {
-                  _context.next = 24;
+                  _context.next = 30;
                   break;
                 }
 
                 _context.next = 3;
-                return (0, _isomorphicUnfetch2.default)('http://localhost:4001/personalized');
+                return (0, _isomorphicUnfetch2.default)(URL + '/personalized');
 
               case 3:
                 res = _context.sent;
@@ -185,7 +195,7 @@ var Index = function (_Component) {
               case 6:
                 recommendData = _context.sent;
                 _context.next = 9;
-                return (0, _isomorphicUnfetch2.default)('http://localhost:4001/program/recommend');
+                return (0, _isomorphicUnfetch2.default)(URL + '/program/recommend');
 
               case 9:
                 res1 = _context.sent;
@@ -195,7 +205,7 @@ var Index = function (_Component) {
               case 12:
                 broadcastData = _context.sent;
                 _context.next = 15;
-                return (0, _isomorphicUnfetch2.default)('http://localhost:4001/banner');
+                return (0, _isomorphicUnfetch2.default)(URL + '/banner');
 
               case 15:
                 res2 = _context.sent;
@@ -204,19 +214,32 @@ var Index = function (_Component) {
 
               case 18:
                 bannerData = _context.sent;
+                _context.next = 21;
+                return (0, _isomorphicUnfetch2.default)(URL + '/top/artists?offset=0&limit=7');
+
+              case 21:
+                hotSingersRes = _context.sent;
+                _context.next = 24;
+                return hotSingersRes.json();
+
+              case 24:
+                hotSingersData = _context.sent;
                 hotMusic = [].concat((0, _toConsumableArray3.default)(recommendData.result.slice(0, 3)), (0, _toConsumableArray3.default)(broadcastData.programs.slice(0, 1)), (0, _toConsumableArray3.default)(recommendData.result.slice(3, 4)), (0, _toConsumableArray3.default)(broadcastData.programs.slice(1, 2)), (0, _toConsumableArray3.default)(recommendData.result.slice(4, 5)), (0, _toConsumableArray3.default)(broadcastData.programs.slice(2, 3)));
 
-                console.log('bannerData', bannerData);
+                console.log('hotSingersData', hotSingersData);
 
                 return _context.abrupt('return', {
                   hotMusic: hotMusic,
                   banners: bannerData.banners
                 });
 
-              case 24:
-                return _context.abrupt('return', { hotMusic: JSON.parse(sessionStorage.getItem('bpl')) });
+              case 30:
+                return _context.abrupt('return', {
+                  hotMusic: JSON.parse(sessionStorage.getItem('hotMusic')),
+                  banners: JSON.parse(sessionStorage.getItem('banners'))
+                });
 
-              case 25:
+              case 31:
               case 'end':
                 return _context.stop();
             }

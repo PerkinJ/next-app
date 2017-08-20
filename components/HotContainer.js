@@ -51,7 +51,8 @@ const style={
 	}
 }
 
-const HotContainer = ({data}) =>(
+function HotContainer({data}){
+	return (
 	<ul style={style.listContainer}>
 		<style jsx>{`
 			.link:{
@@ -108,4 +109,5 @@ const HotContainer = ({data}) =>(
   </ul>
 )
 
+}
 export default HotContainer
