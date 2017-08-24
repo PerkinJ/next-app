@@ -7,7 +7,6 @@ import HotContainer from '../components/HotContainer'
 
 const style = {
   container:{
-
     margin:'0 auto',
     width:'980px',
     background:'#fff',

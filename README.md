@@ -21,3 +21,6 @@
 槽点：
 1. 虽然有热更新，但如果有错的时候，热更新停止，页面无法更新，强制刷新也不行，得重启
 2. css-in-js  还是写得不友好，调试也比较麻烦
+
+改进：
+css-in-js 可以采用[aphrodite](https://github.com/Khan/aphrodite),[《CSS-in-JavaScript：基于组件的样式组织》](https://medium.freecodecamp.org/css-in-javascript-the-future-of-component-based-styling-70b161a79a32)

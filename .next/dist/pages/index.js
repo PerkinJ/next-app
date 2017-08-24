@@ -71,11 +71,10 @@ var _HotContainer2 = _interopRequireDefault(_HotContainer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _container,
-    _jsxFileName = '/Users/perkin/work/practice/next-app/pages/index.js?entry';
+    _jsxFileName = '/Users/deepglint/work/practice/next-app/pages/index.js?entry';
 
 var style = {
   container: (_container = {
-
     margin: '0 auto',
     width: '980px',
     background: '#fff',
@@ -122,7 +121,7 @@ var Index = function (_Component) {
       return _react2.default.createElement(_Layout2.default, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 72
         }
       }, _react2.default.createElement(_Slider2.default, {
         items: banners,
@@ -134,29 +133,29 @@ var Index = function (_Component) {
         arrows: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 73
         }
       }), _react2.default.createElement('div', { style: style.container, __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 82
         }
       }, _react2.default.createElement('div', { style: style.containerLeft, __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 83
         }
       }, _react2.default.createElement('div', { style: style.nav, __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 84
         }
       }), _react2.default.createElement(_HotContainer2.default, {
         data: hotMusic,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 86
         }
       })), _react2.default.createElement('div', { style: style.containerRight, __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 90
         }
       })));
     }
